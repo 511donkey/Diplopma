@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DataProcessingController">
+    <children>
+        <Label alignment="CENTER" prefHeight="112.0" prefWidth="700.0" style="-fx-background-color: #d6e1ef;" text="Согласие на обработку персональных данных" textAlignment="CENTER" textFill="#0e5139" StackPane.alignment="TOP_CENTER">
+            <font>
+                <Font name="Kefa Regular" size="32.0" />
+            </font></Label>
+        <Label cacheShape="false" contentDisplay="CENTER" prefHeight="357.0" prefWidth="700.0" text="В соответствии  с ч.4 ст. 9 Федерального закона от 27.07.2006 № 152-Ф3 &quot;О персональных данных&quot; даю согласие на обработку ООО &quot;МОДИЦИНА&quot;(Адрес : Компания ООО МОДИЦИНА, адрес: Ленинградская обл., Кировский район, г. Отрадное, ул. Щурова, д. 3/1 пом. 20, 28 зарегистрирована 15.06.2016. Организации присвоены ИНН 7811613113, ОГРН 1167847258897, КПП 470601001 , www.r-checkup.ru), далее оператор, моих персональных данных.                                       Оператор вправе осуществлять сбор, запись , систематизацию, накопление, хранение, уточнение(обновление, изменение), извлечение, использование, передачу(предоставление доступа), обезличивание, блокирование, удаление, уничтожение моих персональных данных с использованием и без использования средств автоматизации.  По поручению оператора в целях оказания услуг, мои персональные данныеобработанны компаниями , список которых размещен на официальном сайте Оператора www.r-checkup.ru.                                                                                                                    Данное согласие действует в течении 15 лет с даты подписания и может быть отозвано путем направления письменного заявления в адрем Оператора.                                 " textAlignment="CENTER" wrapText="true">
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin></Label>
+      <Button fx:id="agree" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #d6e1ef;" text="Согласен" textFill="#1e6556" StackPane.alignment="BOTTOM_LEFT">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <StackPane.margin>
+            <Insets bottom="20.0" left="20.0" />
+         </StackPane.margin>
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <Button fx:id="disagree" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #d6e1ef;" text="Не согласен" textFill="#792121" StackPane.alignment="BOTTOM_RIGHT">
+         <StackPane.margin>
+            <Insets bottom="20.0" right="20.0" />
+         </StackPane.margin>
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+    </children>
+</StackPane>

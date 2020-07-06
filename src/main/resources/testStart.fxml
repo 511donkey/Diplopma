@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d6e1ef;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TestStartController">
+   <children>
+      <Button fx:id="EEG" mnemonicParsing="false" prefHeight="200.0" prefWidth="250.0" style="-fx-background-color: #566885;" text="2.ЭКГ" textFill="#192561" StackPane.alignment="CENTER_RIGHT">
+         <StackPane.margin>
+            <Insets right="30.0" />
+         </StackPane.margin>
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="test" mnemonicParsing="false" prefHeight="200.0" prefWidth="250.0" style="-fx-background-color: #566885;" text="1.Тесты" textFill="#1d2075" StackPane.alignment="CENTER_LEFT">
+         <StackPane.margin>
+            <Insets left="30.0" />
+         </StackPane.margin>
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+   </children>
+</StackPane>

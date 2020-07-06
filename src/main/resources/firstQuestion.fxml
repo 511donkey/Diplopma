@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FirstQuestionController">
+    <children>
+        <StackPane fx:id="next1" prefHeight="219.0" prefWidth="701.0">
+            <children>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6e1ef" height="113.0" stroke="WHITE" strokeType="OUTSIDE" width="336.0" />
+                <Text fx:id="yearOutput" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="JUSTIFY" wrappingWidth="220.22900390625" StackPane.alignment="CENTER">
+                    <font>
+                        <Font size="53.0" />
+                    </font>
+                </Text>
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="59.0" prefWidth="552.0" text="Сколько полных лет?" textAlignment="CENTER" textFill="#1f4c57" StackPane.alignment="TOP_CENTER">
+                    <font>
+                        <Font name="Chalkboard" size="23.0" />
+                    </font></Label>
+            </children>
+        </StackPane>
+        <HBox alignment="TOP_CENTER" prefHeight="85.0" prefWidth="697.0" spacing="10.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#number" prefHeight="70.0" prefWidth="70.0" text="7" />
+                <Button mnemonicParsing="false" onAction="#number" prefHeight="70.0" prefWidth="70.0" text="8" />
+                <Button mnemonicParsing="false" onAction="#number" prefHeight="70.0" prefWidth="70.0" text="9" />
+            </children></HBox>
+
+        <HBox alignment="TOP_CENTER" prefHeight="85.0" prefWidth="702.0" spacing="10.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#number" prefHeight="70.0" prefWidth="70.0" text="4" />
+                <Button mnemonicParsing="false" onAction="#number" prefHeight="70.0" prefWidth="70.0" text="5" />
+                <Button mnemonicParsing="false" onAction="#number" prefHeight="70.0" prefWidth="70.0" text="6" />
+            </children></HBox>
+
+        <HBox alignment="TOP_CENTER" prefHeight="85.0" prefWidth="703.0" spacing="10.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#number" prefHeight="70.0" prefWidth="70.0" text="1" />
+                <Button mnemonicParsing="false" onAction="#number" prefHeight="70.0" prefWidth="70.0" text="2" />
+                <Button mnemonicParsing="false" onAction="#number" prefHeight="70.0" prefWidth="70.0" text="3" />
+            </children></HBox>
+
+        <HBox alignment="TOP_CENTER" prefHeight="86.0" prefWidth="703.0" spacing="10.0">
+            <children>
+                <Button fx:id="nextWindow" mnemonicParsing="false" onAction="#processSend" prefHeight="70.0" prefWidth="70.0" text="ok" />
+                <Button mnemonicParsing="false" onAction="#number" prefHeight="70.0" prefWidth="70.0" text="0" />
+                <Button mnemonicParsing="false" onAction="#processDeleteYear" prefHeight="70.0" prefWidth="70.0" text="delete" />
+            </children></HBox>
+
+    </children>
+</VBox>
