@@ -6,23 +6,17 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Row;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.sql.BatchUpdateException;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
-public class AutorizationController implements Initializable {
-
-    //Controller controller;
-
-    //private String text = controller.getText();
-
-    //FXMLLoader loader = new FXMLLoader();
-
-
-   // @FXML
-   // Controller controller = loader.getController();
+public class AutorizationController extends BasicController implements Initializable {
 
     @FXML
     private Label name;
@@ -32,6 +26,9 @@ public class AutorizationController implements Initializable {
 
     @FXML
     private Button sayNo;
+
+    @FXML
+    private Button onStart;
 
     public void openStartWindow(){
         sayNo.getScene().getWindow().hide();
@@ -69,14 +66,40 @@ public class AutorizationController implements Initializable {
         stage.showAndWait();
     }
 
+    public static void writeNameToExcel (String answer){
+        try{
+            FileInputStream myxls = new FileInputStream("src/main/resources/ответы на вопросы.xls");
+            HSSFWorkbook wb = new HSSFWorkbook(myxls);
+            HSSFSheet answers = wb.getSheetAt(0);
+            Row row = answers.getRow(1);
+            row.createCell(2).setCellValue(answer);
+            myxls.close();
+            FileOutputStream outputStream = new FileOutputStream(new File("src/main/resources/ответы на вопросы.xls"));
+            wb.write(outputStream);
+            outputStream.close();
+            System.out.println("is successfully written");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         sayYes.setOnAction(event -> {
+            writeNameToExcel(((Controller) Controllers.get(Controller.class)).getText());
             openDataProcessingWindow();
         });
         sayNo.setOnAction(event -> {
             openStartWindow();
         });
-        //name.setText(text);
+
+        if(((Controller) Controllers.get(Controller.class)).getText() == null)
+        {name.setText("сотрудник не найден");} else {name.setText(((Controller) Controllers.get(Controller.class)).getText() + ", это Вы ?");}
+
+        onStart.setOnAction(event -> {
+            openStartWindow();
+        });
     }
 }

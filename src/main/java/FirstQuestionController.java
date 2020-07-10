@@ -1,39 +1,36 @@
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.poifs.filesystem.POIFSFileSystem;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.Row;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.awt.event.MouseEvent;
+import java.io.*;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class FirstQuestionController {
+
     @FXML
     private Button nextWindow;
 
     @FXML
     private Text yearOutput;
-    private String text;
-    private long num = 0;
+
+    //private String text;
+    //private long num = 0;
 
     private boolean start = true;
-    private String delete = "";
-    private String ok = "";
-
-    private Model model = new Model();
-
-    public Text getOutput() {
-        return yearOutput;
-    }
-
-    public String getText() {
-        return text;
-    }
+    //private String delete = "";
+    //private String ok = "";
 
     @FXML
     private void number(ActionEvent event) {
@@ -48,14 +45,9 @@ public class FirstQuestionController {
 
     @FXML
     private void processSend(ActionEvent event) {
-        String value = yearOutput.getText();
         System.out.println(yearOutput.getText());
-        HSSFWorkbook wb = readWorkbook("src/main/resources/ответы на вопросы.xls");
-        String firstAnswer = yearOutput.getText();
-        wb.getSheetAt(0).getRow(3).getCell(2).setCellValue(firstAnswer);
-       // Cell cell = wb.createSheet("Лист1").createRow(0).createCell(0);
-       // cell.setCellValue(yearOutput.getText());
-        writeWorkbook(wb,"src/main/resources/ответы на вопросы.xls");
+        writeFirstAnswer(yearOutput.getText());
+        openSecondQuestion();
         start = true;
     }
 
@@ -68,46 +60,54 @@ public class FirstQuestionController {
         }
     }
 
-    @FXML
-    void inizialize(){
+   /* @FXML
+    void inizialize() {
+        yearOutput.setText("234");
+    }
+*/
+    public void openSecondQuestion(){
+        nextWindow.getScene().getWindow().hide();
 
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("secondQuestion.fxml"));
+
+        try {
+            loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Parent root = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.showAndWait();
     }
 
-    public static HSSFWorkbook readWorkbook(String filename) {
-        try {
-            POIFSFileSystem fs = new POIFSFileSystem(new FileInputStream(filename));
-            HSSFWorkbook wb = new HSSFWorkbook(fs);
-            return wb;
-        }
-        catch (Exception e) {
-            return null;
-        }
-    }
 
-    public static void writeWorkbook(HSSFWorkbook wb, String fileName) {
-        try {
-            FileOutputStream fileOut = new FileOutputStream(fileName);
-            wb.write(fileOut);
-            fileOut.close();
-        }
-        catch (Exception e) {
-            //Обработка ошибки
-        }
-    }
-    /*public void writeToExcel() {
-        try {
-            FileInputStream input = new FileInputStream("src/main/resources/ответы на вопросы.xls");
-            FileOutputStream fos = new FileOutputStream("src/main/resources/ответы на вопросы.xls");
-            Workbook wb = new HSSFWorkbook(input);
-            String firstAnswer = yearOutput.getText();
-            wb.getSheetAt(0).getRow(3).getCell(2).setCellValue(firstAnswer);
-            wb.write(fos);
-            input.close();
-            fos.close();
+    public static void writeFirstAnswer(String answer){
+        try{
+            FileInputStream myxls = new FileInputStream("src/main/resources/ответы на вопросы.xls");
+            HSSFWorkbook wb = new HSSFWorkbook(myxls);
+            HSSFSheet answers = wb.getSheetAt(0);
+            Row row = answers.getRow(2);
+            row.createCell(2).setCellValue(answer);
+            myxls.close();
+            FileOutputStream outputStream = new FileOutputStream(new File("src/main/resources/ответы на вопросы.xls"));
+            wb.write(outputStream);
+            outputStream.close();
+            System.out.println("is successfully written");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+   /* @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
     }*/
+
 }
+
+

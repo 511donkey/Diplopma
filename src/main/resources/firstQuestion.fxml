@@ -7,7 +7,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FirstQuestionController">
     <children>
-        <StackPane fx:id="next1" prefHeight="219.0" prefWidth="701.0">
+        <StackPane fx:id="next2" prefHeight="219.0" prefWidth="701.0">
             <children>
                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6e1ef" height="113.0" stroke="WHITE" strokeType="OUTSIDE" width="336.0" />
                 <Text fx:id="yearOutput" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="JUSTIFY" wrappingWidth="220.22900390625" StackPane.alignment="CENTER">

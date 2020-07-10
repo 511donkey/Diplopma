@@ -13,36 +13,31 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.Date;
 import java.util.Iterator;
 
 import static org.apache.poi.ss.usermodel.CellType.*;
 
-public class Controller {
+public class Controller extends BasicController{
     @FXML
     private Button next;
 
     @FXML
     private Text output;
     private String text;
-    private long num = 0;
 
     private boolean start = true;
-    private String delete = "";
-    private String ok = "";
-
-    private Model model = new Model();
 
     public Text getOutput() {
         return output;
     }
 
     public String getText() {
+        readName();
         return text;
     }
+
 
     @FXML
     private void num(ActionEvent event){
@@ -57,10 +52,11 @@ public class Controller {
 
     @FXML
     private void processOk(ActionEvent event){
-        String value = output.getText();
+       // String value = output.getText();
         System.out.println(output.getText());
-        closeWindow();
         readName();
+        closeWindow();
+
         start = true;
     }
 
@@ -96,26 +92,6 @@ public class Controller {
         }
     }
 
-    /*public void readName(){
-
-        try {
-            FileInputStream input = new FileInputStream("src/main/resources/сотрудники.xls");
-            Workbook wb = new HSSFWorkbook(input);
-            for (int i = 1; i < 3; i++) {
-                String number = getCellText(wb.getSheetAt(0).getRow(i).getCell(0));
-                if(number.equals(output.getText())){
-                    text = getCellText(wb.getSheetAt(0).getRow(i).getCell(1));
-                    System.out.println(text);
-                }
-            }
-            input.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }*/
-
     public void closeWindow(){
         next.getScene().getWindow().hide();
 
@@ -132,7 +108,6 @@ public class Controller {
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.showAndWait();
-        // Controller controller = loader.getController();
     }
 
     public static String getCellText(Cell cell){

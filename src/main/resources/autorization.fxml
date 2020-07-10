@@ -7,7 +7,7 @@
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AutorizationController">
     <children>
-        <Label fx:id="name" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;" text="Label" textAlignment="CENTER" StackPane.alignment="TOP_CENTER">
+        <Label fx:id="name" alignment="CENTER" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;" text="Label" textAlignment="CENTER" StackPane.alignment="TOP_CENTER">
             <font>
                 <Font size="26.0" />
             </font>
@@ -26,5 +26,10 @@
          <font>
             <Font size="25.0" />
          </font></Button>
+      <Button fx:id="onStart" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #d6e1ef;" text="В начало" textFill="#751212" StackPane.alignment="TOP_RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
     </children>
 </StackPane>
