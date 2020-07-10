@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SecondQuestionController">
+   <children>
+      <StackPane prefHeight="165.0" prefWidth="700.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="136.0" prefWidth="700.0" style="-fx-background-color: #d6e1ef;" text="Сколько месяцев до дня рождения?" textAlignment="CENTER" StackPane.alignment="TOP_CENTER">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </StackPane>
+      <HBox alignment="CENTER" prefHeight="103.0" prefWidth="700.0">
+         <children>
+            <Button fx:id="one" alignment="CENTER" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="1">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin></Button>
+            <Button fx:id="two" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="2">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin></Button>
+            <Button fx:id="three" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="3">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin></Button>
+            <Button fx:id="four" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="4" />
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="five" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="5">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin></Button>
+            <Button fx:id="six" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="6">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin></Button>
+            <Button fx:id="seven" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="7">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin></Button>
+            <Button fx:id="eight" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="8" />
+         </children></HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="nine" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="9">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="ten" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="10">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="eleven" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="11">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="twelve" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="12" />
+         </children></HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin></HBox>
+   </children>
+</VBox>

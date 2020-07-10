@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="15.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FifthQuestionController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="120.0" prefWidth="600.0" style="-fx-background-color: #d6e1ef;" text="Пьете ли Вы? Как часто?" textFill="#131857">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="no" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Нет" />
+      <Button fx:id="everyDay" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Каждый день" />
+      <Button fx:id="onWeekends" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="По выходным" />
+      <Button fx:id="monthly" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="1-2 раза в месяц" />
+   </children>
+</VBox>

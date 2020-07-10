@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="15.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SixthQuestionController">
+   <children>
+      <Label alignment="CENTER" prefHeight="120.0" prefWidth="600.0" style="-fx-background-color: #d6e1ef;" text="Как Вы спите?" textFill="#172b6f">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Button fx:id="good" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Хорошо, 7-8 часов" />
+      <Button fx:id="disturbing" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Тревожный сон" />
+      <Button fx:id="oftenWakeUp" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Часто просыпаюсь" />
+   </children>
+</VBox>

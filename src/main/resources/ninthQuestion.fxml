@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="5.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="NinthQuestionController">
+   <children>
+      <Label alignment="CENTER" prefHeight="120.0" prefWidth="600.0" style="-fx-background-color: #d6e1ef;" text="Есть ли какие-нибудь жалобы?" textFill="#161865">
+         <font>
+            <Font size="22.0" />
+         </font></Label>
+      <Button fx:id="no" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Нет жалоб" />
+      <Button fx:id="headache" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Головная боль" />
+      <Button fx:id="toothache" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Зубная боль" />
+      <Button fx:id="backache" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Боль в спине" />
+      <Button fx:id="other" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Другое" />
+   </children>
+</VBox>

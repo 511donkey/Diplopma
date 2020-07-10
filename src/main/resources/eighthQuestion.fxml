@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="15.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EighthQuestionController">
+   <children>
+      <Label alignment="CENTER" prefHeight="120.0" prefWidth="600.0" style="-fx-background-color: #d6e1ef;" text="Употребляли ли когда-нибудь наркотики? Как давно?" textFill="#15224a">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Button fx:id="no" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" text="Не употреблял" />
+      <Button fx:id="recently" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" text="Употреблял недавно" />
+      <Button fx:id="yearAgo" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" text="Употреблял больше года назад" />
+      <Button fx:id="twoYearsAgo" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" text="Употреблял больше двух лет назад" />
+   </children>
+</VBox>

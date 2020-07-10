@@ -1,0 +1,100 @@
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Row;
+
+
+import java.io.*;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class NinthQuestionController implements Initializable {
+
+    @FXML
+    private Button no;
+
+    @FXML
+    private Button headache;
+
+    @FXML
+    private Button toothache;
+
+    @FXML
+    private Button backache;
+
+    @FXML
+    private Button other;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        no.setOnAction(event -> {
+            writeNinthAnswer(no.getText());
+             openExit(no);
+        });
+
+        headache.setOnAction(event -> {
+            writeNinthAnswer(headache.getText());
+            openExit(headache);
+        });
+
+        toothache.setOnAction(event -> {
+            writeNinthAnswer(toothache.getText());
+            openExit(toothache);
+        });
+
+        backache.setOnAction(event -> {
+            writeNinthAnswer(backache.getText());
+            openExit(backache);
+        });
+
+        other.setOnAction(event -> {
+            writeNinthAnswer(other.getText());
+            openExit(other);
+        });
+
+    }
+
+    public static void writeNinthAnswer(String answer){
+        try{
+            FileInputStream myxls = new FileInputStream("src/main/resources/ответы на вопросы.xls");
+            HSSFWorkbook wb = new HSSFWorkbook(myxls);
+            HSSFSheet answers = wb.getSheetAt(0);
+            Row row = answers.getRow(10);
+            row.createCell(2).setCellValue(answer);
+            myxls.close();
+            FileOutputStream outputStream = new FileOutputStream(new File("src/main/resources/ответы на вопросы.xls"));
+            wb.write(outputStream);
+            outputStream.close();
+            System.out.println("is successfully written");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void openExit(Button button){
+        button.getScene().getWindow().hide();
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("exit.fxml"));
+
+        try {
+            loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Parent root = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.showAndWait();
+    }
+}

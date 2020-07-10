@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="15.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FourthQuestionController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="120.0" prefWidth="600.0" style="-fx-background-color: #d6e1ef;" text="Курите ли Вы? Как часто?" textAlignment="CENTER" textFill="#121968">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Button fx:id="noSmoking" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Не курю" />
+      <Button fx:id="onePack" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="1 пачка в день" />
+      <Button fx:id="twoPacks" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="2-3 пачки в неделю" />
+      <Button fx:id="fivePacks" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="5 пачек в неделю" />
+   </children>
+</VBox>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="583.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ThirdQuestionController">
+   <children>
+      <Label alignment="CENTER" prefHeight="150.0" prefWidth="600.0" style="-fx-background-color: #d6e1ef;" text="От цифры 100 отнимать по 17 и дойти до 0,   запишите в строку через запятую" textFill="#0a215b" wrapText="true">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <TextField fx:id="text" alignment="CENTER" prefHeight="100.0" prefWidth="400.0" StackPane.alignment="CENTER">
+         <font>
+            <Font size="25.0" />
+         </font></TextField>
+      <Button fx:id="nextQuestion" mnemonicParsing="false" prefHeight="70.0" prefWidth="150.0" style="-fx-background-color: #d6e1ef;" text="Следующий вопрос" textFill="#152151" StackPane.alignment="BOTTOM_RIGHT">
+         <StackPane.margin>
+            <Insets bottom="20.0" right="20.0" />
+         </StackPane.margin>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</StackPane>
